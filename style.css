@@ -246,3 +246,63 @@ header h2{
     background-color: var(--gold-light);
     transform: translateY(-2px);
 }
+
+
+/* ==========================================
+   MOBILE RESPONSIVE FIXES
+   ========================================== */
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto; /* Allows scrolling on mobile if content is tall */
+    }
+
+    #main_div {
+        padding: 60px 15px 20px 15px; /* Less side padding on small screens */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .slide {
+        height: auto;
+        max-height: none;
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    /* Slide 1: Stack the text and logo vertically on mobile */
+    #slide1_content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+
+    #slide1_content h1 {
+        font-size: 2.5rem; /* Shrinks the massive title for phones */
+    }
+
+    #logo_container img {
+        max-width: 200px; /* Makes the logo fit nicely on a phone screen */
+    }
+
+    /* Make schedule and activity lists stack cleanly */
+    .schedule-item, .activity-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .schedule-item .time {
+        align-self: flex-start;
+    }
+
+    /* Move buttons slightly so they don't block content */
+    #control_buttons {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #control_buttons button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
